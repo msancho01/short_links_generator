@@ -9,8 +9,8 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 You will need to have the following installed on your system:
 
-* Ruby (version 2.6 or higher)
-* Rails (version 6.0 or higher)
+* Ruby (version 3.1.2)
+* Rails (version 7 or higher)
 * Sidekiq (version 6.5.8 or lower)
 
 ### Installation
