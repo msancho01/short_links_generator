@@ -1,19 +1,19 @@
-#ShortLinks Generator
+# ShortLinks Generator
 
 ShortLink generator is a simple URL shortening service that allows you to shorten long URLs into short and memorable links.
 
-##Getting Started
+## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-###Prerequisites
+### Prerequisites
 You will need to have the following installed on your system:
 
-*Ruby (version 2.6 or higher)
-*Rails (version 6.0 or higher)
-*Sidekiq (version 6.5.8 or lower)
+* Ruby (version 2.6 or higher)
+* Rails (version 6.0 or higher)
+* Sidekiq (version 6.5.8 or lower)
 
-###Installation
+### Installation
 
 1. Clone the repository to your local machine:
 ```git clone https://github.com/msancho01/short_links_generator.git```
@@ -42,7 +42,7 @@ rails db:seed
 7. Open a new terminal and navigate to the project and Start the Sidekiq server
 ``` bundle exec sidekiq ```
 
-###Usage
+### Usage
 
 To use ShortLink Generator,
 * To create a ShortLink simply send an API request to `http://localhost:3000/short_links` and send a JSON with the url you want to shorten.
