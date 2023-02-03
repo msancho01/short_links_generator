@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   resources :short_links, only: :create
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get ':token' => 'short_links#redirect'
+  get '/' => 'short_links#index'
 end
