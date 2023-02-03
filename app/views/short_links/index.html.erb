@@ -1,0 +1,31 @@
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #ddd;
+  }
+</style>
+
+<h1>Top 100 most frequently opened ShortLinks</h1>
+
+<table>
+  <tr>
+    <th>Short URL</th>
+    <th>Long URL</th>
+    <th>Clicks count</th>
+  </tr>
+  <% @shortlinks.each do |link| %>
+    <tr>
+      <td><%= link.token %></td>
+      <td><%= link.long_url %></td>
+      <td><%= link.clicks_count.to_i %></td>
+    </tr>
+  <% end %>
+</table>

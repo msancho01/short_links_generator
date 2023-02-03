@@ -12,9 +12,28 @@ class ShortLinksController < ApplicationController
     end
   end
 
+  def redirect
+    shortlink = ShortLink.find_by(token: redirect_params[:token])
+    if shortlink.present?
+      clicks_count = shortlink.clicks_count.to_i + 1
+      shortlink.update(clicks_count: clicks_count)
+      redirect_to shortlink.long_url, allow_other_host: true
+    else
+      render 'unknown'
+    end
+  end
+
+  def index
+    @shortlinks = ShortLink.order(clicks_count: :desc).limit(100)
+  end
+
   private
     def create_params
       params.require(:short_link).permit(:long_url)
+    end
+
+    def redirect_params
+      params.permit(:token)
     end
 
     def update_params
