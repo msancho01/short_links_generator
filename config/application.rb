@@ -30,5 +30,6 @@ module ShortLinksGenerator
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    ::MAIN_CONFIG = YAML.load(ERB.new(File.read(Rails.root.join('config/config.yml'))).result)
   end
 end

@@ -1,0 +1,2 @@
+short_link:
+  size: <%= ENV['SHORT_LINK_SIZE'] || 4 %>

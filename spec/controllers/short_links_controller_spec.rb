@@ -12,10 +12,10 @@ RSpec.describe ShortLinksController, type: :controller do
     end
 
     it "returns the top 100 short_links ordered by clicks_count in descending order" do
-      150.times { ShortLink.create! valid_attributes }
+      rand(1..101).times { ShortLink.create valid_attributes }
       get :index
-      expect(assigns(:short_links).size).to be <= 100
-      expect(assigns(:short_links)).to eq(ShortLink.order(clicks_count: :desc).limit(100))
+      expect(assigns(:shortlinks).size).to be <= 100
+      expect(assigns(:shortlinks)).to eq(ShortLink.order(clicks_count: :desc).limit(100))
     end
   end
 

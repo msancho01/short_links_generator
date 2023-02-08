@@ -1,0 +1,1 @@
+SHORT_LINK = MAIN_CONFIG['short_link']
