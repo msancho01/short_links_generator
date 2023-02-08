@@ -55,3 +55,20 @@ To use ShortLink Generator,
 * To navigate to the Top 100 most used ShortLinks, open `http://localhost:3000` in your preferred browser
 
 * To open a ShortLink and be redirected to the original URL, just navigate to `http://localhost:3000/`+ the token generated in the system
+
+### Test
+
+To run test, use this command:
+```
+    rspec spec
+```
+
+### Environment Variables
+
+#### SHORT_LINK
+| Environment variable | Notes |
+| :------------------: | :---- |
+|   SHORT_LINK_SIZE    |       |
+
+> To avoid access the ENV vars in code, I use an alternative config var, in this case will be access with SHORT_LINK['size']
+> This size is the parameter for urlsafe_base64, for more information go to: https://apidock.com/ruby/SecureRandom/urlsafe_base64/class
