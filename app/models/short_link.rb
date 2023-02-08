@@ -10,7 +10,9 @@ class ShortLink < ApplicationRecord
 
   private
     def generate_shortcode
-      shortcode = SecureRandom.urlsafe_base64(4)
+      # SecureRandom.urlsafe_base64(n=nil) The argument n specifies the length, in bytes, of the random number to be generated.
+      # The length of the result string is about 4/3 of n. Fot more ingo go to: https://apidock.com/ruby/SecureRandom/urlsafe_base64/class
+      shortcode = SecureRandom.urlsafe_base64(SHORT_LINK['size'])
       if ShortLink.find_by(token: shortcode).present?
         generate_shortcode
       else
